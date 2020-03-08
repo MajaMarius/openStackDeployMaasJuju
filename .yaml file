@@ -1,0 +1,21 @@
+compute:
+nova-compute:
+  enable-live-migration: true
+  enable-resize: true
+  migration-auth-type: ssh
+  openstack-origin: cloud:bionic-train
+~                                        
+
+maas-cloud.yaml:
+clouds:
+  maas-cloud:
+    type: maas
+    auth-types: [oauth1]
+    endpoint: http://10.10.1.128:5240/MAAS
+
+credentials:
+  maas-cloud:
+    default-credential: admin
+    admin:
+    auth-type: oauth1
+    maas-oauth: 
