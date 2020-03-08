@@ -95,7 +95,7 @@ mv bionic-server-cloudimg-amd64.qcow2 home/john/vmdisk/maas.qcow2
 
 #create VM for MAAS
 
-virt-install --name maas --memory 8048 --vcpus 1 --disk path=/home/john/vmdisk/maas.qcow2,size=50 --network bridge=br0 --network bridge=br1 --graphics vnc,listen=0.0.0.0 --pxe --console pty,target_type=serial
+virt-install --name maas --ram 16000 --disk path=./vmdisk/maas.qcow2,size=100 --vcpus 4 --os-type linux --os-variant generic --network bridge=br0 --network bridge=br1 --graphics vnc --console pty,target_type=serial --cdrom '/home/matrix/ubuntu-18.04.3-live-server-amd64.iso'
 
 #resize maas.qcow image to 40G
 
